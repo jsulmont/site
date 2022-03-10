@@ -650,6 +650,7 @@
 (defn infer-content-type
   [extension]
   (case extension
+    "pdf" "application/pdf"
     ("htm" "html") "text/html;charset=utf-8"
     "js" "text/javascript"
     ("map" "json") "application/json"
@@ -703,7 +704,6 @@
                      dialect (assoc "site-template-dialect" dialect))
           :body file
           :throw false})]
-
     (cond
       (= status 400)
       (do

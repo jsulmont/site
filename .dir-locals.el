@@ -1,5 +1,7 @@
-((nil
-  (cider-ns-refresh-before-fn . "dev-extras/suspend")
-  (cider-ns-refresh-after-fn  . "dev-extras/resume")
-  (cider-repl-init-code . ("(start)"))
-  (cider-clojure-cli-global-options . "-A:dev")))
+((clojure-mode . ((clojure-indent-style . :always-align)
+                  (cider-repl-buffer-size-limit . 100)
+                  (cider-ns-refresh-before-fn . "dev-extras/suspend")
+                  (cider-ns-refresh-after-fn  . "dev-extras/resume")
+                   ;(cider-repl-init-code . ("(start)"))
+                  (cider-clojure-cli-aliases . "-A:dev:test:prod")
+                  )))

@@ -1,7 +1,6 @@
 ;; Copy this to $HOME/.config/site/config.edn
 
-{
- ;; Used by bin/site to know where to send HTTP API requests.
+{;; Used by bin/site to know where to send HTTP API requests.
  :juxt.site.alpha/base-uri "http://localhost:2021"
 
  ;; If specified, this is used to source passwords from Unix pass.
@@ -9,7 +8,10 @@
 
  :ig/system
  {:juxt.site.alpha.db/xt-node
-  {:xtdb/tx-log
+  {:xtdb.http-server/server
+   {:port 3000}
+
+   :xtdb/tx-log
    {:kv-store {:xtdb/module xtdb.rocksdb/->kv-store
                :db-dir #join [#env HOME "/.local/share/site/db/txes"]}}
 
@@ -36,5 +38,4 @@
    :juxt.site.alpha/dynamic? #profile {:dev true :prod false}}
 
   :juxt.site.alpha.nrepl/server
-  {:juxt.site.alpha/port 7888}
-  }}
+  {:juxt.site.alpha/port 7888}}}
