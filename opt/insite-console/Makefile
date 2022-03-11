@@ -1,6 +1,9 @@
 .PHONY: build install token
 
 build:
+ifndef GRAPHQL_API_URL
+	$(error GRAPHQL_API_URL is undefined)
+endif
 	yarn
 	yarn build
 
