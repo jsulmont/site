@@ -13,6 +13,10 @@
         com.xtdb/xtdb-rocksdb {:mvn/version "1.20.0"}
         com.xtdb/xtdb-lucene {:mvn/version "1.20.0"}
         com.xtdb/xtdb-http-server {:mvn/version "1.20.0"}
+        ;; com.xtdb/xtdb-core {:mvn/version "1.21.0-beta1"}
+        ;; com.xtdb/xtdb-rocksdb {:mvn/version "1.21.0-beta1"}
+        ;; com.xtdb/xtdb-lucene {:mvn/version "1.21.0-beta1"}
+        ;; com.xtdb/xtdb-http-server {:mvn/version "1.21.0-beta1"}
 
         ;; Jetty
         ring/ring-jetty-adapter {:mvn/version "1.9.5"}
@@ -78,13 +82,12 @@
         ;; Required for OAuth2, not necessarily only for Auth0 since it
         ;; implements the relevant standards so any OAuth2 provided should work.
         com.auth0/java-jwt {:mvn/version "3.18.3"}
-        com.auth0/jwks-rsa {:mvn/version "0.20.2"}
-        }
+        com.auth0/jwks-rsa {:mvn/version "0.20.2"}}
 
  :aliases
  {:dev
   {:extra-paths ["dev" "test"]
-   :extra-deps { ;; Convenience libraries made available during development
+   :extra-deps {;; Convenience libraries made available during development
                 org.clojure/test.check {:mvn/version "1.1.1"}
                 org.clojure/alpha.spec {:git/url "https://github.com/clojure/spec-alpha2.git"
                                         :sha "99456b1856a6fd934e2c30b17920bd790dd81775"}}
